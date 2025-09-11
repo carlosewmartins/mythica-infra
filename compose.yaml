@@ -10,6 +10,7 @@ services:
     volumes:
       - ./backend:/workspace/backend
       - ./frontend:/workspace/frontend
+      - /workspace/frontend/node_modules
     environment:
       - PYTHONDONTWRITEBYTECODE=1
       - PYTHONUNBUFFERED=1
