@@ -6,7 +6,7 @@ Este repositório integra:
 
 A ideia é separar responsabilidades:
 - **Frontend** → buildado e publicado no [Vercel](https://vercel.com).
-- **Backend** → rodando em container Docker, exposto em :8000 (API). <-- (Por enquanto)
+- **Backend** → rodando em container Docker, exposto em :8000 (API). ← (Por enquanto)
 
 ---
 
