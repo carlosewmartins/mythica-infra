@@ -12,7 +12,7 @@ A ideia é separar responsabilidades:
 
 ## 🚀 Clonar com submódulos
 ```bash
-git clone --recurse-submodules git@github.com:carlosewmartins/mythica-infra.git
+git clone --recurse-submodules https://github.com/carlosewmartins/mythica-infra.git
 cd mythica-infra
 ```
 
