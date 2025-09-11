@@ -11,12 +11,19 @@ RUN python3 -m venv /venv \
 ENV PATH="/venv/bin:${PATH}"
 
 # Angular CLI
-RUN npm i -g @angular/cli
+COPY frontend/package*.json frontend/
+WORKDIR /workspace/frontend
+RUN npm i -g @angular/cli && npm install
+WORKDIR /workspace
+
+# Copy backend and frontend source code
+COPY backend/ backend/
+COPY frontend/ frontend/
 
 # Supervisord roda uvicorn + ng serve no mesmo container (dev)
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 EXPOSE 8000 4200
-CMD ["/usr/bin/supervisord"]
+CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
 
 # --------- PROD: só API (uvicorn) ---------
 FROM python:3.12-slim AS prod
