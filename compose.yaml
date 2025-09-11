@@ -1,0 +1,15 @@
+services:
+  web:
+    build:
+      context: .
+      target: dev          # mudar para "prod" quando quiser produção
+    container_name: mythica
+    ports:
+      - "8000:8000"
+      - "4200:4200"
+    volumes:
+      - ./backend:/workspace/backend
+      - ./frontend:/workspace/frontend
+    environment:
+      - PYTHONDONTWRITEBYTECODE=1
+      - PYTHONUNBUFFERED=1

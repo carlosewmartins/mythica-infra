@@ -1,0 +1,10 @@
+# Node / Angular
+frontend/node_modules/
+frontend/dist/
+
+# Python
+backend/.venv/
+**/__pycache__/
+
+# Docker / misc
+*.env
